@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 3</title>
+</head>
+<body>
+    <h2> this http requst </h2>
+<script>
+console.log("welcome to html js")
+
+function handleData(){
+    let data = JSON.parse(this.responseText)
+    for( let i = 0; i < data.length; i++){
+        console.log(data[i].name.common)
+        console.log(data[i].population)
+        console.log(data[i].region)
+        console.log(data[i].subregion)
+        
+    }
+    for(let i = 0; i < data.length; i++){
+        console.log(console.log(data[i].flags.png))
+    }
+}
+const req = new XMLHttpRequest();
+req.addEventListener('load',handleData)
+
+req.open("GET","https://restcountries.com/v3.1/all")
+req.send()
+    </script>
+</body>
+</html>
